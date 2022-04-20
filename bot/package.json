@@ -1,7 +1,8 @@
 {
 	"dependencies": {
-		"eris": "^0.16.1",
-		"express": "^4.17.3",
-		"body-parser": "^1.20.0"
+		"@discordjs/rest": "^0.4.1",
+		"discord-api-types": "^0.31.2",
+		"discord.js": "^13.6.0",
+		"node-global-proxy": "^1.0.1"
 	}
 }
