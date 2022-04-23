@@ -1,10 +1,11 @@
-const { BOT_TOKEN, CLIENT_ID, GUILD_ID, Proxy_Url } = require('./config.json')
-const { ignoreMessage } = require('./message/ignoreMessage/ignoreMessage.module')
+const { BOT_TOKEN, CLIENT_ID, GUILD_ID, PROXY_URL } = require('./config.json')
+const { ignoreMessage } = require(
+  './message/ignoreMessage/ignoreMessage.module')
 const { useProxy } = require('./useProxy/useProxy')
 const { useCommandsCreate } = require('./interaction/command/commandCreate')
 
 //start using proxy
-useProxy(Proxy_Url)
+useProxy(PROXY_URL)
 
 //create commands
 useCommandsCreate(BOT_TOKEN, CLIENT_ID, GUILD_ID)

@@ -1,8 +1,8 @@
-const useProxy = (Proxy_Url) => {
+const useProxy = (PROXY_URL) => {
   const proxy = require('node-global-proxy').default
   proxy.setConfig({
-    http: Proxy_Url,
-    https: Proxy_Url,
+    http: PROXY_URL,
+    https: PROXY_URL,
   })
   proxy.start()
 }
