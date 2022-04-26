@@ -37,4 +37,21 @@ client.on('messageCreate', async (message) => {
   }
 })
 
+client.on('guildCreate', async (server) =>{
+  try {
+    await server.channels.create('may-be-scammer',{
+        type: 'GUILD_TEXT',
+        permissionOverwrites: [
+          {
+            id: server.id,
+            allow: ['VIEW_CHANNEL']
+          },
+        ],
+      }
+      )
+  }
+  catch (err) {
+    console.log(err)
+  }
+})
 client.login(BOT_TOKEN)
