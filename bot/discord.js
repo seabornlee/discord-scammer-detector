@@ -18,10 +18,12 @@ useProxy(PROXY_URL)
 useCommandsCreate(BOT_TOKEN, CLIENT_ID, GUILD_ID)
 
 const { Client, Intents } = require('discord.js')
+const { getPotentialScammer } = require(
+  './potentialScammer/getPotentialScammer')
 const client = new Client(
-  { intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] })
+  { intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MEMBERS] })
 
-client.on('ready', () => {
+client.on('ready', (message) => {
   console.log(`Logged in as ${client.user.tag}!`)
 })
 
@@ -29,14 +31,16 @@ client.on('interactionCreate', async interaction => {
   //it is should a command
   if (!interaction.isCommand()) return
   //What should be done after the command is executed
-  commandReaction(interaction)
+  await commandReaction(interaction)
 })
 
 client.on('messageCreate', async (message) => {
   //message that should be ignore
   ignoreMessage(message)
   //The reaction to  particular messages
-  messageReaction(message)
+  await messageReaction(message)
+  //get all username of the guild,except this bot
+  await getPotentialScammer(message)
 })
 
 client.on('guildCreate', async (server) => {
