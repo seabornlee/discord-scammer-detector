@@ -2,10 +2,14 @@ const { BOT_TOKEN, CLIENT_ID, GUILD_ID, PROXY_URL } = require('./config.json')
 const { ignoreMessage } = require(
   './message/ignoreMessage/ignoreMessage.module')
 const { useProxy } = require('./useProxy/useProxy')
-const { useCommandsCreate } = require('./interaction/command/commandCreate/commandCreate')
-const { commandReaction } = require('./interaction/command/commandReaction/commandReaction')
-const { autoCreateChannel } = require('./guild/channel/channelCreate/autoCreateChannel.module')
-const { messageReaction } = require('./message/messageReaction/messageReaction.module')
+const { useCommandsCreate } = require(
+  './interaction/command/commandCreate/commandCreate')
+const { commandReaction } = require(
+  './interaction/command/commandReaction/commandReaction')
+const { autoCreateChannel } = require(
+  './guild/channel/channelCreate/autoCreateChannel.module')
+const { messageReaction } = require(
+  './message/messageReaction/messageReaction.module')
 
 //start using proxy
 useProxy(PROXY_URL)

@@ -8,7 +8,7 @@ const autoCreateChannelModule = (server) => {
         },
       ],
     },
-  )
+  ).then(channel => {channel.send('welcome to use scammer-detector-bot!')})
 }
 
 module.exports = { autoCreateChannel: autoCreateChannelModule }
