@@ -12,8 +12,9 @@ const { messageReaction } = require(
   './message/messageReaction/messageReaction.module')
 const { getBotIntegralGuilds } = require(
   './potentialScammer/getBotIntegralGuilds')
-const { getPotentialScammer } = require(
-  './potentialScammer/getPotentialScammer')
+const { getTargetChannelId } = require('./potentialScammer/getTargetChannelId')
+const { getTargetUserNameList } = require(
+  './potentialScammer/getTargetUserNameList')
 
 //start using proxy
 useProxy(PROXY_URL)
@@ -22,7 +23,6 @@ useProxy(PROXY_URL)
 useCommandsCreate(BOT_TOKEN, CLIENT_ID, GUILD_ID)
 
 const { Client, Intents } = require('discord.js')
-const { getTargetChannelId } = require('./potentialScammer/getTargetChannelId')
 const client = new Client(
   {
     intents: [
@@ -33,6 +33,7 @@ const client = new Client(
 
 client.on('ready', (message) => {
   console.log(`Logged in as ${client.user.tag}!`)
+  potentialScammerModule(client)
 })
 
 client.on('interactionCreate', async interaction => {
@@ -47,8 +48,6 @@ client.on('messageCreate', async (message) => {
   ignoreMessage(message)
   //The reaction to  particular messages
   await messageReaction(message)
-  //get all username of the guild,except this bot
-  // await getPotentialScammer(message)
 })
 
 client.on('guildCreate', async (server) => {
@@ -67,7 +66,9 @@ const potentialScammerModule = async (client) => {
   const guildList = await getBotIntegralGuilds(client)
   for (let guild of guildList) {
     const targetChannelId = await getTargetChannelId(guild)
+    const userNameList = await getTargetUserNameList(client, guild)
+    console.log(userNameList)
   }
 }
-potentialScammerModule(client)
+
 
