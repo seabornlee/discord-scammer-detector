@@ -10,11 +10,6 @@ const { autoCreateChannel } = require(
   './guild/channel/channelCreate/autoCreateChannel.module')
 const { messageReaction } = require(
   './message/messageReaction/messageReaction.module')
-const { getBotIntegralGuilds } = require(
-  './potentialScammer/getBotIntegralGuilds')
-const { getTargetChannelId } = require('./potentialScammer/getTargetChannelId')
-const { getTargetUserNameList } = require(
-  './potentialScammer/getTargetUserNameList')
 
 //start using proxy
 useProxy(PROXY_URL)
@@ -23,6 +18,8 @@ useProxy(PROXY_URL)
 useCommandsCreate(BOT_TOKEN, CLIENT_ID, GUILD_ID)
 
 const { Client, Intents } = require('discord.js')
+const { potentialScammerModule } = require(
+  './potentialScammer/potentialScammerModule')
 const client = new Client(
   {
     intents: [
@@ -62,13 +59,5 @@ client.on('guildCreate', async (server) => {
 
 client.login(BOT_TOKEN)
 
-const potentialScammerModule = async (client) => {
-  const guildList = await getBotIntegralGuilds(client)
-  for (let guild of guildList) {
-    const targetChannelId = await getTargetChannelId(guild)
-    const userNameList = await getTargetUserNameList(client, guild)
-    console.log(userNameList)
-  }
-}
 
 

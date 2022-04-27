@@ -1,13 +1,13 @@
-const getTargetUserNameList = async (client, guild) => {
+const getTargetUsernameList = async (client, guild) => {
   //get all username of the guild,except this bot
-  let userNameList = await guild.members.fetch()
-  let targetUserNameList = []
-  userNameList.forEach(u => {
+  let usernameList = await guild.members.fetch()
+  let targetUsernameList = []
+  usernameList.forEach(u => {
     if (u.user.id !== client.user.id) {
-      targetUserNameList.push(u.user.username)
+      targetUsernameList.push(u.user.username)
     }
   })
-  return targetUserNameList
+  return targetUsernameList
 }
 
-module.exports = { getTargetUserNameList }
+module.exports = { getTargetUsernameList }
