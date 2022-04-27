@@ -1,4 +1,4 @@
-const autoCreateChannelModule = (server) => {
+const autoCreateChannel = (server) => {
   server.channels.create('may-be-scammer', {
       type: 'GUILD_TEXT',
       permissionOverwrites: [
@@ -11,4 +11,4 @@ const autoCreateChannelModule = (server) => {
   ).then(channel => {channel.send('welcome to use scammer-detector-bot!')})
 }
 
-module.exports = { autoCreateChannel: autoCreateChannelModule }
+module.exports = { autoCreateChannel }

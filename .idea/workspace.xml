@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b551db11-84ff-4297-9505-1a7fdf98c215" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/config.template.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/discord.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/interaction/command/commandCreate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/message/ignoreMessage/ignoreMessage.module.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/pnpm-lock.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/useProxy/useProxy.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bot/potentialScammer/getBotIntegralGuilds.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bot/discord.js" beforeDir="false" afterPath="$PROJECT_DIR$/bot/discord.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bot/guild/channel/channelCreate/autoCreateChannel.module.js" beforeDir="false" afterPath="$PROJECT_DIR$/bot/guild/channel/channelCreate/autoCreateChannel.module.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bot/potentialScammer/getPotentialScammer.js" beforeDir="false" afterPath="$PROJECT_DIR$/bot/potentialScammer/getPotentialScammer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
