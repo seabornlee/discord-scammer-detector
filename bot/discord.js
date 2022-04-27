@@ -28,9 +28,11 @@ const client = new Client(
       Intents.FLAGS.GUILD_MEMBERS],
   })
 
-client.on('ready', (message) => {
+client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`)
-  potentialScammerModule(client)
+  setInterval(function () {
+    potentialScammerModule(client)
+  }, 100)
 })
 
 client.on('interactionCreate', async interaction => {
