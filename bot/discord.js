@@ -22,6 +22,7 @@ useProxy(PROXY_URL)
 useCommandsCreate(BOT_TOKEN, CLIENT_ID, GUILD_ID)
 
 const { Client, Intents } = require('discord.js')
+const { getTargetChannelId } = require('./potentialScammer/getTargetChannelId')
 const client = new Client(
   {
     intents: [
@@ -47,7 +48,7 @@ client.on('messageCreate', async (message) => {
   //The reaction to  particular messages
   await messageReaction(message)
   //get all username of the guild,except this bot
-  await getPotentialScammer(message)
+  // await getPotentialScammer(message)
 })
 
 client.on('guildCreate', async (server) => {
@@ -62,4 +63,11 @@ client.on('guildCreate', async (server) => {
 
 client.login(BOT_TOKEN)
 
-getBotIntegralGuilds(client)
+const potentialScammerModule = async (client) => {
+  const guildList = await getBotIntegralGuilds(client)
+  for (let guild of guildList) {
+    const targetChannelId = await getTargetChannelId(guild)
+  }
+}
+potentialScammerModule(client)
+

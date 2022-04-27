@@ -14,7 +14,7 @@ const getBotIntegralGuilds = async (client) => {
     let integralGuild = await client.guilds.fetch(guildId)
     integralGuildList.push(integralGuild)
   }
-  return integralGuildList
+  return  integralGuildList
 }
 
 module.exports = { getBotIntegralGuilds }
