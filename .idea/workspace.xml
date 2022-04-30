@@ -4,6 +4,8 @@
     <list default="true" id="b551db11-84ff-4297-9505-1a7fdf98c215" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bot/discord.js" beforeDir="false" afterPath="$PROJECT_DIR$/bot/discord.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bot/potentialScammer/getBotIntegralGuilds.js" beforeDir="false" afterPath="$PROJECT_DIR$/bot/potentialScammer/getBotIntegralGuilds.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bot/potentialScammer/getTargetChannelId.js" beforeDir="false" afterPath="$PROJECT_DIR$/bot/potentialScammer/getTargetChannelId.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +43,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="16.14.0" />
     <property name="javascript.nodejs.core.library.typings.version" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../nodejs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -92,6 +94,10 @@
       <workItem from="1650562124187" duration="5095000" />
       <workItem from="1650591514962" duration="11930000" />
       <workItem from="1650652196408" duration="1846000" />
+      <workItem from="1651152124675" duration="64000" />
+      <workItem from="1651161839181" duration="3002000" />
+      <workItem from="1651194497619" duration="4756000" />
+      <workItem from="1651296116789" duration="715000" />
     </task>
     <servers />
   </component>

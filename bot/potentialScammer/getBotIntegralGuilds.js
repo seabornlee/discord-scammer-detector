@@ -1,5 +1,4 @@
 const getBotGuildsId = async (client) => {
-  //get the bot guilds id
   let guildIdList = []
   const roughlyGuildList = await client.guilds.fetch()
   await roughlyGuildList.forEach(guild => guildIdList.push(guild.id))

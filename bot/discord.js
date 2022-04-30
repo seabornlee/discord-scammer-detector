@@ -32,11 +32,10 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`)
   setInterval(function () {
     potentialScammerModule(client)
-  }, 100)
+  }, 3000)
 })
 
 client.on('interactionCreate', async interaction => {
-  //it is should a command
   if (!interaction.isCommand()) return
   //What should be done after the command is executed
   await commandReaction(interaction)
