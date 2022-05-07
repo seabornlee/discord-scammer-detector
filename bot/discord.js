@@ -11,10 +11,10 @@ const { autoCreateChannel } = require(
 const { messageReaction } = require(
   './message/messageReaction/messageReaction.module')
 
-//start using proxy
+
 useProxy(PROXY_URL)
 
-//create commands
+//test the bot has 'applications.commands' scope
 useCommandsCreate(BOT_TOKEN, CLIENT_ID, GUILD_ID)
 
 const { Client, Intents } = require('discord.js')
@@ -26,22 +26,21 @@ client.on('ready', () => {
 })
 
 client.on('interactionCreate', async interaction => {
-  //it is should a command
   if (!interaction.isCommand()) return
-  //What should be done after the command is executed
   commandReaction(interaction)
 })
 
 client.on('messageCreate', async (message) => {
-  //message that should be ignore
+  //the bot shouldn't has reaction for every message
   ignoreMessage(message)
-  //The reaction to  particular messages
   messageReaction(message)
 })
 
 client.on('guildCreate', async (server) => {
   try {
-    //after the bot is deploy,automatic create a new channel
+    //when the bot first join the guild,
+    //It should create a "may-be-scammer" channel
+    //and then send a hello message to this channel
     await autoCreateChannel(server)
   }
   catch (err) {
