@@ -1,4 +1,6 @@
 const { BOT_TOKEN, CLIENT_ID, GUILD_ID, PROXY_URL } = require('./config.json')
+const { firstDeploy } = require(
+  './guild/channel/channelCreate/firstDeploy.module')
 const { ignoreMessage } = require(
   './message/ignoreMessage/ignoreMessage.module')
 const { useProxy } = require('./useProxy/useProxy')
@@ -6,11 +8,9 @@ const { useCommandsCreate } = require(
   './interaction/command/commandCreate/commandCreate')
 const { commandReaction } = require(
   './interaction/command/commandReaction/commandReaction')
-const { autoCreateChannel } = require(
-  './guild/channel/channelCreate/autoCreateChannel.module')
+
 const { messageReaction } = require(
   './message/messageReaction/messageReaction.module')
-
 
 useProxy(PROXY_URL)
 
@@ -23,6 +23,7 @@ const client = new Client(
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`)
+
 })
 
 client.on('interactionCreate', async interaction => {
@@ -36,12 +37,13 @@ client.on('messageCreate', async (message) => {
   messageReaction(message)
 })
 
-client.on('guildCreate', async (server) => {
+client.on('guildCreate', async (guild) => {
   try {
     //when the bot first join the guild,
-    //It should create a "may-be-scammer" channel
+    //It should create a name:"may-be-scammer",type:"GUILD_TEXT" channel
     //and then send a hello message to this channel
-    await autoCreateChannel(server)
+    //PS:Verify that the user has given the permission
+    firstDeploy(guild)
   }
   catch (err) {
     console.log(err)

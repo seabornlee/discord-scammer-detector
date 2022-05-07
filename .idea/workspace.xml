@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b551db11-84ff-4297-9505-1a7fdf98c215" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/bot/common.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bot/guild/channel/channelCreate/firstDeploy.module.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bot/internationalizationSayHello.config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bot/discord.js" beforeDir="false" afterPath="$PROJECT_DIR$/bot/discord.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bot/message/ignoreMessage/ignoreMessage.module.js" beforeDir="false" afterPath="$PROJECT_DIR$/bot/message/ignoreMessage/ignoreMessage.module.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bot/guild/channel/channelCreate/autoCreateChannel.module.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +24,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/bot/discord.js" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="JsBowerSettings">
     <bower-package value="" />
