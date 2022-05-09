@@ -1,6 +1,6 @@
 const { BOT_TOKEN, CLIENT_ID, GUILD_ID, PROXY_URL } = require('./config.json')
-const { firstDeploy } = require(
-  './guild/channel/channelCreate/firstDeploy.module')
+const { createChannelSayHi } = require(
+  './guild/channel/channelCreate/createChannelSayHi.module')
 const { ignoreMessage } = require(
   './message/ignoreMessage/ignoreMessage.module')
 const { useProxy } = require('./useProxy/useProxy')
@@ -43,7 +43,7 @@ client.on('guildCreate', async (guild) => {
     //It should create a name:"may-be-scammer",type:"GUILD_TEXT" channel
     //and then send a hello message to this channel
     //PS:Verify that the user has given the permission
-    firstDeploy(guild)
+    createChannelSayHi(guild)
   }
   catch (err) {
     console.log(err)
