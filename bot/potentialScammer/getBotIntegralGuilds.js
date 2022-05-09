@@ -6,7 +6,6 @@ const getBotGuildsId = async (client) => {
 }
 
 const getBotIntegralGuilds = async (client) => {
-  //get the bot really guilds
   let guildIdList = await getBotGuildsId(client)
   let integralGuildList = []
   for (let guildId of guildIdList) {

@@ -6,15 +6,11 @@ const { useCommandsCreate } = require(
   './interaction/command/commandCreate/commandCreate')
 const { commandReaction } = require(
   './interaction/command/commandReaction/commandReaction')
-const { autoCreateChannel } = require(
-  './guild/channel/channelCreate/autoCreateChannel.module')
 const { messageReaction } = require(
   './message/messageReaction/messageReaction.module')
 
-//start using proxy
 useProxy(PROXY_URL)
 
-//create commands
 useCommandsCreate(BOT_TOKEN, CLIENT_ID, GUILD_ID)
 
 const { Client, Intents } = require('discord.js')
@@ -32,30 +28,17 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`)
   setInterval(function () {
     potentialScammerModule(client)
-  }, 3000)
+  }, 10000)
 })
 
 client.on('interactionCreate', async interaction => {
   if (!interaction.isCommand()) return
-  //What should be done after the command is executed
   await commandReaction(interaction)
 })
 
 client.on('messageCreate', async (message) => {
-  //message that should be ignore
   ignoreMessage(message)
-  //The reaction to  particular messages
   await messageReaction(message)
-})
-
-client.on('guildCreate', async (server) => {
-  try {
-    //after the bot is deploy,automatic create a new channel
-    await autoCreateChannel(server)
-  }
-  catch (err) {
-    console.log(err)
-  }
 })
 
 client.login(BOT_TOKEN)
