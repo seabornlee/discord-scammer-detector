@@ -8,14 +8,14 @@ const { commandReaction } = require(
   './interaction/command/commandReaction/commandReaction')
 const { messageReaction } = require(
   './message/messageReaction/messageReaction.module')
+const { routineCheck } = require(
+  './potentialScammer/routineCheck.module')
 
 useProxy(PROXY_URL)
 
 useCommandsCreate(BOT_TOKEN, CLIENT_ID, GUILD_ID)
 
 const { Client, Intents } = require('discord.js')
-const { potentialScammerModule } = require(
-  './potentialScammer/potentialScammerModule')
 const client = new Client(
   {
     intents: [
@@ -27,8 +27,8 @@ const client = new Client(
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`)
   setInterval(function () {
-    potentialScammerModule(client)
-  }, 10000)
+    routineCheck(client)
+  }, 5000)
 })
 
 client.on('interactionCreate', async interaction => {
