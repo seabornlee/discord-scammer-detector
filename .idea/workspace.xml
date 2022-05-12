@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b551db11-84ff-4297-9505-1a7fdf98c215" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/bot/potentialScammer/fetchMatchConditionMembers.module.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/potentialScammer/fetchTargetChannel.module.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/potentialScammer/getBotAllGuilds.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/potentialScammer/getMembersUsername.module.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/potentialScammer/routineCheck.module.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bot/discord.js" beforeDir="false" afterPath="$PROJECT_DIR$/bot/discord.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bot/potentialScammer/getBotIntegralGuilds.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bot/potentialScammer/getTargetChannelId.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bot/potentialScammer/getTargetUserNameList.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bot/potentialScammer/potentialScammerModule.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +103,8 @@
       <workItem from="1651313953628" duration="372000" />
       <workItem from="1652162863150" duration="4567000" />
       <workItem from="1652233806755" duration="10690000" />
-      <workItem from="1652251443103" duration="9122000" />
+      <workItem from="1652251443103" duration="9664000" />
+      <workItem from="1652324197742" duration="914000" />
     </task>
     <servers />
   </component>

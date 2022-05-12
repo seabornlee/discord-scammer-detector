@@ -27,7 +27,13 @@ const client = new Client(
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`)
   setInterval(function () {
-    routineCheck(client)
+    //May fail due to network problems
+    try {
+      routineCheck(client)
+    }
+    catch (e) {
+      console.log(e)
+    }
   }, 5000)
 })
 
