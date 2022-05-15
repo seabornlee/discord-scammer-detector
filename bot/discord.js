@@ -3,14 +3,14 @@ const { ignoreMessage } = require(
   './message/ignoreMessage/ignoreMessage.module')
 const { useProxy } = require('./useProxy/useProxy')
 const { useCommandsCreate } = require('./interaction/command/commandCreate')
-
+const { banTheScammers } = require('./aboutScammers/banTheScammers/banTheScammers.module')
 //start using proxy
 useProxy(PROXY_URL)
 
 //create commands
 useCommandsCreate(BOT_TOKEN, CLIENT_ID, GUILD_ID)
 
-const { Client, Intents, Permissions } = require('discord.js')
+const { Client, Intents } = require('discord.js')
 const client = new Client(
   {
     intents: [
@@ -38,40 +38,9 @@ client.on('messageCreate', async (message) => {
   if (message.mentions.has(client.user.id)) {
     await message.reply('Hello')
   }
-  await banTheScammers(message)
+  banTheScammers(message)
 })
 
-const banTheScammers = (message) => {
-  //first of all, check to see if the message was sent by the guild manager on the may-be-scammer channel
-  isTargetChannel(message)
-  const messageSender = getTheMessageSender(message)
-  identityAuthentication(messageSender)
-}
 
-const identityAuthentication = (member) => {
-  //if the member is this guild owner that he can do anything
-  //if not,check the member has the permissions
-  if (isGuildOwner(member)) return isGuildOwner(member)
-  return isGuildManager(member)
-}
-const isTargetChannel = (message) => {
-  return message.channel.name === 'may-be-scammer'
-}
-
-const isGuildManager = (member) => {
-  return isHasBanMembersPermissions(member)
-}
-
-const isGuildOwner = (member) => {
-  return member.user.id === member.guild.ownerId
-}
-
-const isHasBanMembersPermissions = (member) => {
-  return member.permissions.has(Permissions.FLAGS.BAN_MEMBERS)
-}
-
-const getTheMessageSender = (message) => {
-  return message.member
-}
 
 client.login(BOT_TOKEN)
