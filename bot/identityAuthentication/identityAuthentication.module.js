@@ -5,11 +5,7 @@ const identityAuthenticationModule = (member) => {
   //if the member is this guild owner that he can do anything
   //if not,check the member has the permissions
   if (isGuildOwner(member)) return isGuildOwner(member)
-  return isGuildManager(member)
-}
-
-const isGuildManager = (member) => {
-  return isHasPermissions(member, permissions)
+  return isHasPermissions(member,permissions)
 }
 
 const permissions = [
