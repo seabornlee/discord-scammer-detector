@@ -1,11 +1,11 @@
 const { Permissions } = require('discord.js')
 const { isGuildOwner } = require('../common')
 
-const identityAuthenticationModule = (member) => {
+const isGuildManager = (member) => {
   //if the member is this guild owner that he can do anything
   //if not,check the member has the permissions
   if (isGuildOwner(member)) return isGuildOwner(member)
-  return isHasPermissions(member,permissions)
+  return isHasPermissions(member, permissions)
 }
 
 const permissions = [
@@ -16,4 +16,4 @@ const isHasPermissions = (member, permissions) => {
   return member.permissions.has([permissions])
 }
 
-module.exports = { identityAuthentication: identityAuthenticationModule }
+module.exports = { isGuildManager }

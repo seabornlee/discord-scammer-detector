@@ -3,7 +3,8 @@ const { ignoreMessage } = require(
   './message/ignoreMessage/ignoreMessage.module')
 const { useProxy } = require('./useProxy/useProxy')
 const { useCommandsCreate } = require('./interaction/command/commandCreate')
-const { banTheScammers } = require('./aboutScammers/banTheScammers/banTheScammers.module')
+const { banTheScammers } = require(
+  './aboutScammers/banTheScammers/banTheScammers.module')
 //start using proxy
 useProxy(PROXY_URL)
 
@@ -35,12 +36,14 @@ client.on('interactionCreate', async interaction => {
 })
 client.on('messageCreate', async (message) => {
   ignoreMessage(message)
-  if (message.mentions.has(client.user.id)) {
+  if (isMessageMentionsTheBot(message)) {
     await message.reply('Hello')
+    banTheScammers(message)
   }
-  banTheScammers(message)
 })
 
-
+const isMessageMentionsTheBot = (message) => {
+  return message.mentions.has(client.user.id)
+}
 
 client.login(BOT_TOKEN)
