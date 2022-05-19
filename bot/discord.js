@@ -36,14 +36,14 @@ client.on('interactionCreate', async interaction => {
 })
 client.on('messageCreate', async (message) => {
   ignoreMessage(message)
-  if (isMessageMentionsTheBot(message)) {
+  if (isMessageMentionsTheBot(message,client)) {
     await message.reply('Hello')
     banTheScammers(message)
   }
 })
 
-const isMessageMentionsTheBot = (message) => {
-  return message.mentions.has(client.user.id)
+const isMessageMentionsTheBot = (message,theBot) => {
+  return message.mentions.has(theBot.user.id)
 }
 
 client.login(BOT_TOKEN)

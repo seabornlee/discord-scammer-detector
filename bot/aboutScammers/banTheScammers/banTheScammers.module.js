@@ -10,8 +10,14 @@ const isRightChannelAndRole = (message) => {
   return isTargetChannel(message) && isGuildManager(messageSender)
 }
 
-const banTheScammers = (message, scammers) => {
-  if (isRightChannelAndRole(message)) return
+const banTheScammers = (message) => {
+  if (isRightChannelAndRole(message)) {
+    getBanUsernames(message)
+  }
+}
+
+const getBanUsernames = (message) => {
+  return message.content.split('\n')[1]
 }
 
 module.exports = { banTheScammers }
