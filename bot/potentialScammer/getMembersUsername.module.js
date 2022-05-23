@@ -18,7 +18,7 @@ const getMembersUsername = async (guild, client) => {
   const membersKeyInformation = getMembersKeyInformation(members)
   let membersUsername = []
   for (let member of membersKeyInformation.values()) {
-    membersUsername.push(member.username+member.discriminator)
+    membersUsername.push(member.username+"#"+member.discriminator)
   }
   return membersUsername
 }
