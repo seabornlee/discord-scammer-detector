@@ -7,8 +7,8 @@ const { useCommandsCreate } = require('./interaction/command/commandCreate')
 //start using proxy
 useProxy(PROXY_URL)
 
-//create commands
-useCommandsCreate(BOT_TOKEN, CLIENT_ID, GUILD_ID)
+
+
 
 const { Client, Intents } = require('discord.js')
 const client = new Client(
@@ -18,6 +18,22 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`)
 })
 
+const getGuilds = () => {
+  return client.guilds.fetch()
+}
+const setCommandsForEveryGuild = async () => {
+  try {
+    const guilds = await getGuilds()
+    guilds.each(guild => {
+      useCommandsCreate(BOT_TOKEN, CLIENT_ID, guild.id)
+    })
+  }
+  catch (e) {
+    console.log(e)
+  }
+}
+
+setCommandsForEveryGuild()
 client.on('interactionCreate', async interaction => {
   if (!interaction.isCommand()) return
 
