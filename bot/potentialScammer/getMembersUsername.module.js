@@ -1,5 +1,5 @@
-const { fetchMatchConditionMembers } = require(
-  './fetchMatchConditionMembers.module')
+const { filterNotBotSelfMembers } = require(
+  './filterNotBotSelfMembers.module')
 
 const getMembersKeyInformation = (members) => {
   let membersKeyInformation = new Map()
@@ -14,7 +14,7 @@ const getMembersKeyInformation = (members) => {
 }
 
 const getMembersUsername = async (guild, client) => {
-  const members = await fetchMatchConditionMembers(guild, client)
+  const members = await filterNotBotSelfMembers(guild, client)
   const membersKeyInformation = getMembersKeyInformation(members)
   let membersUsername = []
   for (let member of membersKeyInformation.values()) {
