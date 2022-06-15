@@ -44,4 +44,10 @@ node discord.js
 
 right now, your discord-scammer-detector bot is running
 
+## About Bot
+
+You should give the bot the permissions it needs.
+e.g:
+![permissions overwrite](./README.snapshot/permissionoverwrite.jpg)
+
 
