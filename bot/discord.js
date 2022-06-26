@@ -11,24 +11,42 @@ const { commandReaction } = require(
 
 const { messageReaction } = require(
   './message/messageReaction/messageReaction.module')
+const { routineCheck } = require(
+  './potentialScammer/routineCheck.module')
 
 useProxy(PROXY_URL)
 
 //test the bot has 'applications.commands' scope
+
 useCommandsCreate(BOT_TOKEN, CLIENT_ID, GUILD_ID)
 
 const { Client, Intents } = require('discord.js')
 const client = new Client(
-  { intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] })
+  {
+    intents: [
+      Intents.FLAGS.GUILDS,
+      Intents.FLAGS.GUILD_MESSAGES,
+      Intents.FLAGS.GUILD_MEMBERS],
+  })
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`)
+
+  setInterval(function () {
+    //May fail due to network problems
+    try {
+      routineCheck(client)
+    }
+    catch (e) {
+      console.log(e)
+    }
+  }, 5000)
 
 })
 
 client.on('interactionCreate', async interaction => {
   if (!interaction.isCommand()) return
-  commandReaction(interaction)
+  await commandReaction(interaction)
 })
 
 client.on('messageCreate', async (message) => {
@@ -48,6 +66,10 @@ client.on('guildCreate', async (guild) => {
   catch (err) {
     console.log(err)
   }
+
 })
 
 client.login(BOT_TOKEN)
+
+
+
