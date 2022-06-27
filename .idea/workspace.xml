@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="502582ba-8e67-4253-a8ae-8399da5d167d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/potentialScammer/fetchTargetChannel.module.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/potentialScammer/filterNotBotSelfMembers.module.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/potentialScammer/getBotAllGuilds.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/potentialScammer/getMembersUsername.module.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bot/potentialScammer/routineCheck.module.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bot/discord.js" beforeDir="false" afterPath="$PROJECT_DIR$/bot/discord.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bot/interaction/command/commandCreate/commandCreate.js" beforeDir="false" afterPath="$PROJECT_DIR$/bot/interaction/command/commandCreate/commandCreate.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +26,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="G:\webstorm\WebStorm 2021.2.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -42,7 +37,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1656318994258</updated>
-      <workItem from="1656318996641" duration="336000" />
+      <workItem from="1656318996641" duration="1755000" />
     </task>
     <servers />
   </component>

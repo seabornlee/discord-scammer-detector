@@ -1,4 +1,4 @@
-const { BOT_TOKEN, CLIENT_ID, GUILD_ID } = require('./config.json')
+const { BOT_TOKEN } = require('./config.json')
 const { createChannelSayHi } = require(
   './guild/channel/channelCreate/createChannelSayHi.module')
 const { ignoreMessage } = require(
@@ -18,7 +18,7 @@ useProxy()
 
 //test the bot has 'applications.commands' scope
 
-useCommandsCreate(BOT_TOKEN, CLIENT_ID, GUILD_ID)
+useCommandsCreate()
 
 const { Client, Intents } = require('discord.js')
 const client = new Client(
@@ -44,22 +44,6 @@ client.on('ready', () => {
 
 })
 
-const getGuilds = () => {
-  return client.guilds.fetch()
-}
-const setCommandsForEveryGuild = async () => {
-  try {
-    const guilds = await getGuilds()
-    guilds.each(guild => {
-      useCommandsCreate(BOT_TOKEN, CLIENT_ID, guild.id)
-    })
-  }
-  catch (e) {
-    console.log(e)
-  }
-}
-
-setCommandsForEveryGuild()
 client.on('interactionCreate', async interaction => {
   if (!interaction.isCommand()) return
   await commandReaction(interaction)

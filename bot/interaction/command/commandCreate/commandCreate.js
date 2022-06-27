@@ -1,3 +1,4 @@
+const { BOT_TOKEN, CLIENT_ID } = require('../../../config.json')
 const { REST } = require('@discordjs/rest')
 const { Routes } = require('discord-api-types/v9')
 
@@ -13,17 +14,17 @@ const commands = [
   {
     name: 'whitelist',
     description: 'Display the whitelist',
-  }
-  ]
+  },
+]
 
-const useCommandsCreate = (BOT_TOKEN, CLIENT_ID, GUILD_ID) => {
+const useCommandsCreate = () => {
   const rest = new REST({ version: '9' }).setToken(BOT_TOKEN);
   (async () => {
     try {
       console.log('Started refreshing application (/) commands.')
 
       await rest.put(
-        Routes.applicationGuildCommands(CLIENT_ID, GUILD_ID),
+        Routes.applicationCommands(CLIENT_ID),
         { body: commands },
       )
 
