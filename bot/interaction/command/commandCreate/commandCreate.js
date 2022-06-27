@@ -9,7 +9,12 @@ const commands = [
   {
     name: 'hello',
     description: 'Replies with Nice!',
-  }]
+  },
+  {
+    name: 'whitelist',
+    description: 'Display the whitelist',
+  }
+  ]
 
 const useCommandsCreate = (BOT_TOKEN, CLIENT_ID, GUILD_ID) => {
   const rest = new REST({ version: '9' }).setToken(BOT_TOKEN);

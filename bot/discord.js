@@ -1,4 +1,4 @@
-const { BOT_TOKEN, CLIENT_ID, GUILD_ID, PROXY_URL } = require('./config.json')
+const { BOT_TOKEN, CLIENT_ID, GUILD_ID } = require('./config.json')
 const { createChannelSayHi } = require(
   './guild/channel/channelCreate/createChannelSayHi.module')
 const { ignoreMessage } = require(
@@ -12,7 +12,7 @@ const { commandReaction } = require(
 const { messageReaction } = require(
   './message/messageReaction/messageReaction.module')
 
-useProxy(PROXY_URL)
+useProxy()
 
 //test the bot has 'applications.commands' scope
 useCommandsCreate(BOT_TOKEN, CLIENT_ID, GUILD_ID)
