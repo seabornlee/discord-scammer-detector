@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ca07e784-1404-4573-825b-6f95deb9057c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+    <list default="true" id="502582ba-8e67-4253-a8ae-8399da5d167d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bot/potentialScammer/fetchTargetChannel.module.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bot/potentialScammer/filterNotBotSelfMembers.module.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bot/potentialScammer/getBotAllGuilds.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bot/potentialScammer/getMembersUsername.module.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bot/potentialScammer/routineCheck.module.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bot/discord.js" beforeDir="false" afterPath="$PROJECT_DIR$/bot/discord.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,15 +20,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="2AvLRNUhH9rbvbrmUUyEJB7WEOM" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="2B9WtIkvSZeZPT5PFJmD7lj023o" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -31,15 +37,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ca07e784-1404-4573-825b-6f95deb9057c" name="Changes" comment="" />
-      <created>1655885103086</created>
+      <changelist id="502582ba-8e67-4253-a8ae-8399da5d167d" name="Changes" comment="" />
+      <created>1656318994258</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1655885103086</updated>
-      <workItem from="1655885106896" duration="1744000" />
-      <workItem from="1655974224403" duration="597000" />
-      <workItem from="1656150413104" duration="1414000" />
-      <workItem from="1656318165016" duration="322000" />
+      <updated>1656318994258</updated>
+      <workItem from="1656318996641" duration="336000" />
     </task>
     <servers />
   </component>
